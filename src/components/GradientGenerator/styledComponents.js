@@ -13,13 +13,15 @@ export const Generator = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 100vh;
 `
 
-export const Div = styled.div`
+export const Div = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 40%;
+  list-style: none;
 `
 export const GenerateBtn = styled.button`
   color: #black;

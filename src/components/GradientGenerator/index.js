@@ -45,6 +45,7 @@ class GradientGenerator extends Component {
 
     return (
       <Generator
+        // data-testid="gradientGenerator"
         direction={direction}
         hexCodeOne={hexCodes[0]}
         hexCodeTwo={hexCodes[1]}
@@ -53,35 +54,36 @@ class GradientGenerator extends Component {
         <p>Choose Direction</p>
         <Div>
           {gradientDirectionsList.map(each => (
-            <GradientDirectionItem
-              key={each.directionId}
-              details={each}
-              actives={actives}
-              changeDirection={this.changeDirection}
-            />
+            <li key={each.directionId}>
+              <GradientDirectionItem
+                details={each}
+                actives={actives}
+                changeDirection={this.changeDirection}
+              />
+            </li>
           ))}
         </Div>
 
         <p>Pick the Colors</p>
         <Div>
-          <div>
+          <li>
             <p>{hexCodeOne}</p>
             <input
               type="color"
               value={hexCodeOne}
               onChange={this.changeHexCodeOne}
             />
-          </div>
-          <div>
+          </li>
+          <li>
             <p>{hexCodeTwo} </p>
             <input
               type="color"
               value={hexCodeTwo}
               onChange={this.changeHexCodeTwo}
             />
-          </div>
+          </li>
         </Div>
-        <GenerateBtn onClick={this.generateBg}>Generator</GenerateBtn>
+        <GenerateBtn onClick={this.generateBg}>Generate</GenerateBtn>
       </Generator>
     )
   }
